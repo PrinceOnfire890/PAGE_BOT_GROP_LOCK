@@ -368,7 +368,7 @@ ${botConfig.prefix}showrules`,
         const lockedName = lockedGroups[event.threadID];
         if (lockedName && event.logMessageData.name !== lockedName) {
           api.setTitle(lockedName, event.threadID, err => {
-            if (!err) api.sendMessage(`  `, event.threadID);
+            if (!err) api.sendMessage(`🔐 Group name lock active. Resetting name to "${lockedName}".`, event.threadID);
           });
         }
       }
